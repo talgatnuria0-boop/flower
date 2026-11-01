@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #faf6f0; 
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXuqhQtpKTZvncymxO2V5Mq77vZrNax1jP0FxnHuzwvQ&s=10'); 
+  background-repeat: repeat;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px 40px 20px; 
+    width: 100%;
+}
+
+.header-content {
+    text-align: center; 
+}
+
+.brand-name {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px; 
+    color: #000000;
+}
+
+.brand-tagline {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-style: italic; 
+    color: #000000; 
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.main-navigation {
+    width: 100%;
+    border-top: 1px solid #cf5276;   
+    border-bottom: 1px solid #aa2078; 
+    padding: 15px 0;                 
+    margin-top: 20px;               
+}
+
+.nav-menu {
+    list-style: none;                
+    margin: 0;
+    padding: 0;
+    display: flex;                  
+    justify-content: center;          
+    gap: 30px;                       
+    flex-wrap: wrap;                 
+}
+
+.nav-menu li a {
+    text-decoration: none;           
+    color: #333333;                  
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;                
+    transition: color 0.3s ease;     
+}
+
+.nav-menu li a:hover {
+    color: #ff8b94;                 
+}
+
+.nav-menu li a.has-dropdown::after {
+    content: " ▾";                   
+    font-size: 0.8rem;              
+    color: #999999;                  
+    vertical-align: middle;
+}
+
+.flower-card-slider {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 20px 40px; 
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.flower-card-slider::-webkit-scrollbar {
+  height: 6px;
+}
+.flower-card-slider::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+.flower-card-slider::-webkit-scrollbar-thumb {
+  background: #d45d79;
+  border-radius: 10px;
+}
+
+.flower-card {
+  display: flex;
+  flex-direction: row; 
+  flex-shrink: 0;
+  width: 500px; 
+  height: 220px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(212, 93, 121, 0.1); 
+  overflow: hidden;
+  scroll-snap-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flower-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(212, 93, 121, 0.18);
+}
+
+.card-img-wrapper {
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  width: 60%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-title {
+  margin: 0 0 8px 0;
+  font-size: 1.25rem;
+  color: #2c2c2c;
+  font-weight: 600;
+}
+
+.card-desc {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.card-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+.buy-btn {
+  background: #d45d79; 
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.buy-btn:hover {
+  background: #c04c66;
+}
+
+.buy-btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 600px) {
+  .flower-card-slider {
+    gap: 16px;
+    padding: 15px 20px; 
+    scroll-snap-type: x mandatory;
+  }
+  
+  .flower-card {
+    flex-direction: column; 
+    width: 260px; 
+    height: 380px; 
+    scroll-snap-align: center;
+  }
+  
+  .card-img-wrapper {
+    width: 100%;
+    height: 45%; 
+  }
+  
+  .card-content {
+    width: 100%;
+    height: 55%; 
+    padding: 15px;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-desc {
+  font-size: 0.85rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  }
+  
+  .card-price {
+    font-size: 1.1rem;
+  }
+  
+  .buy-btn {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
